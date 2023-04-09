@@ -1,0 +1,79 @@
+.pnl {
+    margin: 2%;
+}
+
+.buttonBuy {
+    background: lightgreen;
+    padding: 0px 0px 0px 20px;
+    width: 100px;
+    align-content: center;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: x-large;
+}
+.buttonBuy2 {
+    background: lightgreen;
+    padding: 0px 0px 0px 20px;
+    width: 150px;
+    align-content: center;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: x-large;
+}
+
+.buttonSell {
+    background: lightcoral;
+    padding: 0px 0px 0px 20px;
+    width: 100px;
+    align-content: center;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: x-large;
+}
+.buttonSell2 {
+    background: lightcoral;
+    padding: 0px 0px 0px 20px;
+    width: 150px;
+    align-content: center;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: x-large;
+}
+.buttonLots {
+    background: lightskyblue;
+    padding: 0px 0px 0px 20px;
+    width: 100px;
+    align-content: center;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: x-large;
+}
+.buttonLots2 {
+    background: lightskyblue;
+    padding: 0px 0px 0px 20px;
+    width: 150px;
+    align-content: center;
+    color: white;
+    border-radius: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: x-large;
+}
+
+.pnlClassRed {
+    color: red;
+}
+
+.pnlClassGreen {
+    color: green;
+}
+
+.lot-size {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: x-large;
+    color: white;
+}

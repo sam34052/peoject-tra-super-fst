@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Main from "./components/main/main";
+import {BrowserRouter, createBrowserRouter, Route, RouterProvider, Routes} from 'react-router-dom';
+import Pnl from "./components/Functions/p_and_l_calculator/pnl";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const router = createBrowserRouter([
+        {
+            path: "/pnl",
+            element: <Pnl/>,
+        },
+    ]);
+    return (
+        <div className="App">
+            <Main></Main>
+            <RouterProvider router={router}/>
+        </div>
+    );
 }
 
 export default App;
