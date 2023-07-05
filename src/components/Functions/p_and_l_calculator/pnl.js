@@ -68,17 +68,31 @@ const Pnl = () => {
                     <div className="col">
                         <div className="row g-3 align-items-center">
                             <div className="col-auto lot-size">
-                                <select onChange={(event) => setLotsSize(event.target.value)} className="form-select" aria-label="Default select example">
+                                <select onChange={(event) => setLotsSize(event.target.value)} className="form-select"
+                                        aria-label="Default select example">
                                     <option selected disabled>Lot Size</option>
                                     <option value="25">Bank Nifty</option>
                                     <option value="50">Nifty</option>
+                                    <option value="10">Sensex</option>
+                                    <option value="40">Fin Nifty</option>
+                                    <option value="15">15</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="35">35</option>
+                                    <option value="45">45</option>
+                                    <option value="100">100</option>
+                                    <option value="75">75</option>
                                 </select>
+                            </div>
+                            <div className="col-auto">
+                                <label htmlFor="inputPassword6" className={netPnlClassCss()} >{netPnlC}</label>
                             </div>
                             <div className="col-auto">
                                 <label htmlFor="inputPassword6" className="col ">Capital</label>
                             </div>
                             <div className="col-auto">
-                                <input type="number" onChange={(event) => setCapital(event.target.value)} className="form-control"/>
+                                <input type="number" onChange={(event) => setCapital(event.target.value)}
+                                       className="form-control"/>
                             </div>
                         </div>
                         <br/>
@@ -87,10 +101,13 @@ const Pnl = () => {
                                 <label htmlFor="inputPassword6" className="col buttonBuy">BUY</label>
                             </div>
                             <div className="col-auto">
-                                <input type="number" onChange={(event) => setBuy(event.target.value)} id="inputPassword6" className="form-control" aria-labelledby="passwordHelpInline"/>
+                                <input type="number" onChange={(event) => setBuy(event.target.value)}
+                                       id="inputPassword6" className="form-control"
+                                       aria-labelledby="passwordHelpInline"/>
                             </div>
                             <div className="col-auto">
-                                <label htmlFor="inputPassword6" className="col buttonBuy2">{buy*(lotSize*lots)}</label>
+                                <label htmlFor="inputPassword6"
+                                       className="col buttonBuy2">{buy * (lotSize * lots)}</label>
                             </div>
                             <div className="col-auto">
                             </div>
@@ -101,10 +118,13 @@ const Pnl = () => {
                                 <label htmlFor="inputPassword6" className="col buttonSell">SELL</label>
                             </div>
                             <div className="col-auto">
-                                <input type="number" onChange={(event) => setSell(event.target.value)} id="inputPassword6" className="form-control" aria-labelledby="passwordHelpInline"/>
+                                <input type="number" onChange={(event) => setSell(event.target.value)}
+                                       id="inputPassword6" className="form-control"
+                                       aria-labelledby="passwordHelpInline"/>
                             </div>
                             <div className="col-auto">
-                                <label htmlFor="inputPassword6" className="col buttonSell2">{sell*(lotSize*lots)}</label>
+                                <label htmlFor="inputPassword6"
+                                       className="col buttonSell2">{sell * (lotSize * lots)}</label>
                             </div>
                             <div className="col-auto">
                             </div>
@@ -115,10 +135,12 @@ const Pnl = () => {
                                 <label htmlFor="inputPassword6" className="col buttonLots">LOTS</label>
                             </div>
                             <div className="col-auto">
-                                <input type="number" onChange={(event) => setLots(event.target.value)} id="inputPassword6" className="form-control" aria-labelledby="passwordHelpInline"/>
+                                <input type="number" onChange={(event) => setLots(event.target.value)}
+                                       id="inputPassword6" className="form-control"
+                                       aria-labelledby="passwordHelpInline"/>
                             </div>
                             <div className="col-auto">
-                                <label htmlFor="inputPassword6" className="col buttonLots2">{(lotSize*lots)}</label>
+                                <label htmlFor="inputPassword6" className="col buttonLots2">{(lotSize * lots)}</label>
                             </div>
                             <div className="col-auto">
                             </div>
@@ -130,15 +152,15 @@ const Pnl = () => {
                                     <tbody>
                                     <tr>
                                         <td>1 lot price</td>
-                                        <td>{parseFloat(buy)*parseFloat(lotSize)}</td>
+                                        <td>{parseFloat(buy) * parseFloat(lotSize)}</td>
                                     </tr>
                                     <tr>
                                         <td>Max lotsize</td>
-                                        <td>{Math.floor(parseFloat(capital)/(parseFloat(buy)*parseFloat(lotSize)))}</td>
+                                        <td>{Math.floor(parseFloat(capital) / (parseFloat(buy) * parseFloat(lotSize)))}</td>
                                     </tr>
                                     <tr>
                                         <td>Max Premium</td>
-                                        <td>{Math.floor(parseFloat(capital)/(parseFloat(lotSize)))}</td>
+                                        <td>{Math.floor(parseFloat(capital) / (parseFloat(lotSize)))}</td>
                                     </tr>
                                     </tbody>
                                 </table>

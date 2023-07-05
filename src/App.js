@@ -12,8 +12,7 @@ function App() {
     ]);
     return (
         <div className="App">
-            <Main></Main>
-            <RouterProvider router={router}/>
+            <Pnl></Pnl>
         </div>
     );
 }
