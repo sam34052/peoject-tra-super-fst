@@ -42,6 +42,51 @@ const Pnl = () => {
         }else return "pnlClassRed";
     }
 
+    const handleIncrementBuy = () => {
+        const updatedBuy = parseInt(buy) + 1;
+        setBuy(updatedBuy);
+        document.getElementById("buyvalueinput").value = updatedBuy;
+    };
+
+    const handleDecrementBuy = () => {
+        if (parseInt(buy) > 0) {
+            const updatedBuy = parseInt(buy) - 1;
+            setBuy(updatedBuy);
+            document.getElementById("buyvalueinput").value = updatedBuy;
+
+        }
+    };
+
+    const handleIncrementSell = () => {
+        const updatedSell = parseInt(sell) + 1;
+        setSell(updatedSell);
+        document.getElementById("sellvalueinput").value = updatedSell;
+    };
+
+    const handleDecrementSell = () => {
+        if (parseInt(sell) > 0) {
+            const updatedSell = parseInt(sell) - 1;
+            setSell(updatedSell);
+            document.getElementById("sellvalueinput").value = updatedSell;
+
+        }
+    };
+
+    const handleIncrementLots = () => {
+        const updatedLots = parseInt(lots) + 1;
+        setLots(updatedLots);
+        document.getElementById("lotsvalueinput").value = updatedLots;
+    };
+
+    const handleDecrementLots = () => {
+        if (parseInt(lots) > 0) {
+            const updatedLots = parseInt(lots) - 1;
+            setLots(updatedLots);
+            document.getElementById("lotsvalueinput").value = updatedLots;
+
+        }
+    };
+
     function calculator_options() {
         let bp,sp,qty,bse_tran_charge_buy,bse_tran_charge_sell;
         bp = parseFloat(parseFloat(buy).toFixed(2));
@@ -71,18 +116,21 @@ const Pnl = () => {
                                 <select onChange={(event) => setLotsSize(event.target.value)} className="form-select"
                                         aria-label="Default select example">
                                     <option selected disabled>Lot Size</option>
-                                    <option value="25">Bank Nifty</option>
+                                    <option value="15">Bank Nifty</option>
                                     <option value="50">Nifty</option>
                                     <option value="10">Sensex</option>
                                     <option value="40">Fin Nifty</option>
-                                    <option value="15">15</option>
                                     <option value="20">20</option>
+                                    <option value="25">25</option>
                                     <option value="30">30</option>
                                     <option value="35">35</option>
                                     <option value="45">45</option>
                                     <option value="100">100</option>
                                     <option value="75">75</option>
                                 </select>
+                            </div>
+                            <div className="col-auto">
+                                <label>Lotsize: {lotSize}</label>
                             </div>
                             <div className="col-auto">
                                 <label htmlFor="inputPassword6" className={netPnlClassCss()} >{netPnlC}</label>
@@ -101,9 +149,15 @@ const Pnl = () => {
                                 <label htmlFor="inputPassword6" className="col buttonBuy">BUY</label>
                             </div>
                             <div className="col-auto">
+                                <button className="btn btn-light" onClick={handleIncrementBuy}>+</button>
+                            </div>
+                            <div className="col-auto">
                                 <input type="number" onChange={(event) => setBuy(event.target.value)}
-                                       id="inputPassword6" className="form-control"
+                                       id="buyvalueinput" className="form-control"
                                        aria-labelledby="passwordHelpInline"/>
+                            </div>
+                            <div className="col-auto">
+                                <button className="btn btn-light" onClick={handleDecrementBuy}>-</button>
                             </div>
                             <div className="col-auto">
                                 <label htmlFor="inputPassword6"
@@ -118,9 +172,15 @@ const Pnl = () => {
                                 <label htmlFor="inputPassword6" className="col buttonSell">SELL</label>
                             </div>
                             <div className="col-auto">
+                                <button className="btn btn-light" onClick={handleIncrementSell}>+</button>
+                            </div>
+                            <div className="col-auto">
                                 <input type="number" onChange={(event) => setSell(event.target.value)}
-                                       id="inputPassword6" className="form-control"
+                                       id="sellvalueinput" className="form-control"
                                        aria-labelledby="passwordHelpInline"/>
+                            </div>
+                            <div className="col-auto">
+                                <button className="btn btn-light" onClick={handleDecrementSell}>-</button>
                             </div>
                             <div className="col-auto">
                                 <label htmlFor="inputPassword6"
@@ -135,9 +195,15 @@ const Pnl = () => {
                                 <label htmlFor="inputPassword6" className="col buttonLots">LOTS</label>
                             </div>
                             <div className="col-auto">
+                                <button className="btn btn-light" onClick={handleIncrementLots}>+</button>
+                            </div>
+                            <div className="col-auto">
                                 <input type="number" onChange={(event) => setLots(event.target.value)}
-                                       id="inputPassword6" className="form-control"
+                                       id="lotsvalueinput" className="form-control"
                                        aria-labelledby="passwordHelpInline"/>
+                            </div>
+                            <div className="col-auto">
+                                <button className="btn btn-light" onClick={handleDecrementLots}>-</button>
                             </div>
                             <div className="col-auto">
                                 <label htmlFor="inputPassword6" className="col buttonLots2">{(lotSize * lots)}</label>
@@ -162,6 +228,19 @@ const Pnl = () => {
                                         <td>Max Premium</td>
                                         <td>{Math.floor(parseFloat(capital) / (parseFloat(lotSize)))}</td>
                                     </tr>
+                                    <tr>
+                                        <td>monthly income</td>
+                                        <td>{Math.round(parseFloat(netPnlC) * 20)}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>daily income</td>
+                                        <td>{Math.round((parseFloat(netPnlC) * 20)/30)}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>monthly income</td>
+                                        <td>{(Math.round(parseFloat(netPnlC) * 20 * 12) / 100000).toFixed(1)} LPA</td>
+                                    </tr>
+
                                     </tbody>
                                 </table>
                             </div>
